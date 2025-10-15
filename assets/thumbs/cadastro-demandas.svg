@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="120" viewBox="0 0 320 120" role="img" aria-label="Cadastro de Demandas thumbnail">
+  <defs>
+    <linearGradient id="g-cadastro-demandas" x1="0" x2="1">
+      <stop offset="0" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#06b6d4"/>
+    </linearGradient>
+    <filter id="fcadastro-demandas" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="320" height="120" rx="12" fill="url(#g-cadastro-demandas)" opacity="0.16"/>
+  <g transform="translate(14,18)">
+    <rect width="60" height="60" rx="8" fill="#06b6d4" opacity="0.14"/>
+    <rect x="72" y="0" width="220" height="14" rx="6" fill="#ffffff" opacity="0.25"/>
+    <rect x="72" y="24" width="160" height="10" rx="5" fill="#ffffff" opacity="0.18"/>
+    <rect x="72" y="46" width="0" height="10" rx="5" fill="#4f46e5">
+      <animate attributeName="width" from="0" to="160" dur="1.6s" repeatCount="indefinite" begin="0s" />
+    </rect>
+    <text x="6" y="96" font-size="10" fill="rgba(0,0,0,0.45)">Cadastro de Demandas</text>
+  </g>
+</svg>

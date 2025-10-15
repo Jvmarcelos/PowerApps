@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>João Vitor Marcelos — Portfólio (inline)</title>
+  <meta name="description" content="Backup inline para teste rápido.">
+  <link rel="canonical" href="https://jvmarcelos.github.io/PowerApps/">
+  <style>/* styles.css v1.0 */
+/* Paleta azul/roxo, Liquid Glass */
+:root{--bg:#f5f7fb;--card:#ffffffaa;--glass:rgba(255,255,255,0.55);--accent1:#4f46e5;--accent2:#06b6d4;--text:#07203a}
+[data-theme="dark"]{--bg:#081126;--card:#0b1220cc;--glass:rgba(10,12,20,0.6);--accent1:#7c3aed;--accent2:#06b6d4;--text:#e6f4ff}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
+body{background:linear-gradient(180deg,var(--bg) 0%, #ffffff00 100%);color:var(--text);-webkit-font-smoothing:antialiased;padding:24px}
+
+/* Container */
+.container{max-width:1100px;margin:0 auto}
+
+/* Liquid glass card */
+.hero{display:flex;gap:24px;align-items:center;padding:28px;border-radius:18px;background:var(--glass);backdrop-filter:blur(8px);box-shadow:0 8px 30px rgba(3,7,18,0.12)}
+.avatar{width:96px;height:96px;border-radius:14px;flex:0 0 96px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
+.meta h1{margin:0;font-size:1.6rem}
+.meta p.lead{margin:8px 0 0}
+
+/* Projects grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:22px}
+.card{padding:14px;border-radius:12px;background:var(--card);overflow:hidden;display:flex;flex-direction:column;gap:10px;min-height:160px}
+.card .thumb{height:96px;display:flex;align-items:center;justify-content:center}
+.card h3{margin:0;font-size:1.05rem}
+.card p{margin:0;color:rgba(0,0,0,0.6)}
+[data-theme="dark"] .card p{color:rgba(255,255,255,0.75)}
+
+/* Controls */
+.controls{display:flex;gap:8px;align-items:center;margin-left:auto}
+.btn{padding:8px 12px;border-radius:10px;border:0;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.06)}
+
+/* Responsive */
+@media(max-width:700px){.hero{flex-direction:column;align-items:flex-start}.controls{width:100%;justify-content:space-between}}
+
+/* Footer & small */
+footer{margin-top:28px;text-align:center;color:rgba(0,0,0,0.45)}
+[data-theme="dark"] footer{color:rgba(255,255,255,0.35)}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero" role="banner">
+      <div class="avatar">Jv</div>
+      <div class="meta">
+        <h1>João Vitor Marcelos de Souza</h1>
+        <p class="lead">Analista de Processos Sênior — Desenho e entrego apps que aceleram processos, simplificam decisões e medem resultados.</p>
+        <div style="display:flex;gap:8px;margin-top:8px;align-items:center;">
+          <a class="btn" href="https://github.com/jvmarcelos" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/joao-vitor-marcelos-engenharia/" target="_blank" rel="noopener">LinkedIn</a>
+          <button class="btn ghost" onclick="toggleTheme()">Toggle Theme</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="projetos" style="margin-top:18px;">
+        <h2>Projetos</h2>
+        <div id="projectsGrid" class="grid"></div>
+      </section>
+    </main>
+  </div>
+<script>// script.js v1.0
+const canonical = "https://jvmarcelos.github.io/PowerApps/";
+async function loadProjects(){
+  try{
+    const res = await fetch('projects.json?v=1.0');
+    const data = await res.json();
+    const grid = document.querySelector('#projectsGrid');
+    grid.innerHTML = '';
+    data.forEach(p=>{
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `
+        <div class="thumb"><object type="image/svg+xml" data="${{p.thumb}}?v=1.0" aria-label="${{p.title}} thumbnail"></object></div>
+        <h3>${{p.title}}</h3>
+        <p>${{p.short}}</p>
+        <div style="margin-top:auto;display:flex;gap:8px;align-items:center;"><a class="btn ghost" href="#case-${{p.id}}">Ver case</a><button class="btn" onclick="downloadCV()">Baixar CV</button></div>
+      `;
+      grid.appendChild(card);
+    });
+  }catch(e){console.error('Erro carregando projects.json',e);}
+}
+function toggleTheme(){
+  const cur = document.documentElement.getAttribute('data-theme');
+  document.documentElement.setAttribute('data-theme', cur==='dark'?'':'dark');
+  localStorage.setItem('theme', document.documentElement.getAttribute('data-theme')||'');
+}
+function applySavedTheme(){
+  const t = localStorage.getItem('theme')||'';
+  if(t) document.documentElement.setAttribute('data-theme', t);
+}
+function downloadCV(){ alert('Botão de placeholder: adicione o arquivo CV no repositório e substitua o link.'); }
+document.addEventListener('DOMContentLoaded', ()=>{ applySavedTheme(); loadProjects(); });
+</script>
+</body>
+</html>
