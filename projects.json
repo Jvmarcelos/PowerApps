@@ -1,0 +1,131 @@
+[
+  {
+    "slug": "cadastro-de-demandas",
+    "title": "Cadastro de Demandas",
+    "summary": "App para registrar e priorizar demandas do portfólio, com KPIs e fluxo de aprovação.",
+    "category": [
+      "Power Apps",
+      "Automate"
+    ],
+    "status": "Entregue",
+    "tags": [
+      "Power Fx",
+      "SharePoint",
+      "SVG/SMIL"
+    ],
+    "links": {
+      "case": "#case",
+      "repo": "https://github.com/SEU_USUARIO/cadastro-de-demandas"
+    },
+    "thumb": "assets/thumbs/cadastro.svg",
+    "year": 2025,
+    "featured": true
+  },
+  {
+    "slug": "faq-workshop-contratos",
+    "title": "FAQ Workshop Contratos",
+    "summary": "Envio e gestão de perguntas via Teams (Adaptive Card) integrado ao Power Automate.",
+    "category": [
+      "Power Apps",
+      "Automate"
+    ],
+    "status": "Entregue",
+    "tags": [
+      "Teams",
+      "Adaptive Cards",
+      "SharePoint"
+    ],
+    "links": {
+      "case": "#",
+      "repo": "https://github.com/SEU_USUARIO/faq-workshop-contratos"
+    },
+    "thumb": "assets/thumbs/faq.svg",
+    "year": 2025,
+    "featured": false
+  },
+  {
+    "slug": "rateio-de-medicao",
+    "title": "Rateio de Medição",
+    "summary": "Tela desktop com galeria flex, barra de progresso e atualização mensal via Excel.",
+    "category": [
+      "Power Apps"
+    ],
+    "status": "Entregue",
+    "tags": [
+      "Power Fx",
+      "Excel",
+      "Performance"
+    ],
+    "links": {
+      "case": "#",
+      "repo": "https://github.com/SEU_USUARIO/rateio-de-medicao"
+    },
+    "thumb": "assets/thumbs/rateio.svg",
+    "year": 2025,
+    "featured": false
+  },
+  {
+    "slug": "statuskit-svg",
+    "title": "StatusKit (SVG/SMIL)",
+    "summary": "Conjunto de ícones animados (check, alerta, negação, aguardando) compatíveis com Power Apps.",
+    "category": [
+      "Power Apps"
+    ],
+    "status": "Entregue",
+    "tags": [
+      "SVG/SMIL",
+      "UI",
+      "Animação"
+    ],
+    "links": {
+      "case": "#",
+      "repo": "https://github.com/SEU_USUARIO/statuskit-svg"
+    },
+    "thumb": "assets/thumbs/statuskit.svg",
+    "year": 2025,
+    "featured": false
+  },
+  {
+    "slug": "organograma-dinamico",
+    "title": "Organograma Dinâmico",
+    "summary": "Hierarquia funcional via SVG/TreeView com base GA_Escala (Power Apps + SharePoint).",
+    "category": [
+      "Power Apps"
+    ],
+    "status": "Em andamento",
+    "tags": [
+      "SharePoint",
+      "TreeView",
+      "SVG"
+    ],
+    "links": {
+      "case": "#",
+      "repo": "https://github.com/SEU_USUARIO/organograma-dinamico"
+    },
+    "thumb": "assets/thumbs/organograma.svg",
+    "year": 2025,
+    "featured": false
+  },
+  {
+    "slug": "gestao-de-viagens",
+    "title": "Gestão de Viagens (MVP)",
+    "summary": "Nova solução para cadastro, aprovação e acompanhamento de viagens corporativas.",
+    "category": [
+      "Power Apps",
+      "Automate"
+    ],
+    "status": "Planejado",
+    "tags": [
+      "MVP",
+      "Aprovação",
+      "Fluxo"
+    ],
+    "links": {
+      "case": "#",
+      "repo": "https://github.com/SEU_USUARIO/gestao-de-viagens"
+    },
+    "thumb": "assets/thumbs/viagens.svg",
+    "year": 2025,
+    "featured": false
+  }
+]
